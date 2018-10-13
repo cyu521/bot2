@@ -186,22 +186,7 @@ init();
 
 /* Load Settings */
 ipcMain.on('setupUi', function(event) {
-  fs.readFile('settings.json', (err, data) => {
-    settings = JSON.parse(data);
-    mainWin.webContents.send('setupUi', JSON.parse(data));
-  });
-  fs.readFile( 'billing.json', (err, data) => {
-    profiles = JSON.parse(data);
-    for (p in profiles) {
-      switch(profiles[p].country) {
-        case 'US':
-          profilesUS[p] = profiles[p];
-          break;
-        case 'UK':
-          profilesUK[p] = profiles[p];
-      }
-    }
-  });
+ mainWin.webContents.send('setupUi');
 })
 
 /* Save Settings */
@@ -426,11 +411,7 @@ class BruteforceTask {
           setTimeout(() => {loadingTasks--;}, 3000);
           doneLoading = true;
         }
-        this.nightmare
-          .cookies.set(fixCookies(settings.gCookies))
-          .then(function() {
-            console.log('here');
-          })
+        
 
         this.setStatus('In Queue');
         this.enableButton('copyCookies');
