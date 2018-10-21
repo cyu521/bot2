@@ -428,6 +428,8 @@ class BruteforceTask {
             .then(function(hasTitle) {
                 if (hasTitle) {
                     Face.setStatus( hasTitle);
+					Face.setColor('none');
+
 					if(hasTitle == "YOU'RE ALMOST THERE…"){
 						Face.setColor('green');
 						Face.enableButton('fillAtc');
