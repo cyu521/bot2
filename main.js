@@ -421,7 +421,14 @@ class BruteforceTask {
           this.nightmare.evaluate(function() {
 				if(document.querySelector('#logo > div > h3') != null){
 					 return document.querySelector('#logo > div > h3').innerText;
-				}else{
+				}
+				if(document.querySelector('#loader > h3') != null) {
+					return document.querySelector('#loader > h3').innerText;
+				}
+				if(document.querySelector('#app > div > h3') != null){
+					 return document.querySelector('#app > div > h3').innerText;
+				}
+				else{
 					return false;
 				}
           })
@@ -453,7 +460,6 @@ class BruteforceTask {
           setTimeout(() => {loadingTasks--;}, 3000);
           doneLoading = true;
         }
-                    setTimeout(function(){checkForSitekey()}, 20000);
       })
   }
 
