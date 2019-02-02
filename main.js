@@ -419,15 +419,22 @@ class BruteforceTask {
 		var Face= this;
         let checkForSitekey = () => {
           this.nightmare.evaluate(function() {
-				if(document.querySelector('#logo > div > h3') != null){
-					 return document.querySelector('#logo > div > h3').innerText;
-				}
 				if(document.querySelector('#loader > h3') != null) {
 					return document.querySelector('#loader > h3').innerText;
 				}
+				
+				if(document.querySelector('#logo > *) h3') != null){
+					 return document.querySelector('#logo > * h3').innerText;
+				}
+				
 				if(document.querySelector('#app > div > h3') != null){
 					 return document.querySelector('#app > div > h3').innerText;
 				}
+				
+				if(document.querySelector('#app > * h3') != null){
+					 return document.querySelector('#app > * h3').innerText;
+				}
+				
 				else{
 					return false;
 				}
