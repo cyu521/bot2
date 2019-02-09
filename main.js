@@ -423,7 +423,7 @@ class BruteforceTask {
 					return document.querySelector('#loader > h3').innerText;
 				}
 				
-				if(document.querySelector('#logo > *) h3') != null){
+				if(document.querySelector('#logo > * h3') != null){
 					 return document.querySelector('#logo > * h3').innerText;
 				}
 				
