@@ -449,6 +449,9 @@ class BruteforceTask {
 						Face.enableButton('fillAtc');
 
 					}
+					else if(hasTitle.toUpperCase() == "PRODUCT DETAILS"){
+						Face.setColor('green');
+					}
                 }else{
 					Face.setColor('orange');
 
