@@ -434,7 +434,21 @@ class BruteforceTask {
 				if(document.querySelector('#app > * h3') != null){
 					 return document.querySelector('#app > * h3').innerText;
 				}
+				if(document.querySelector('#loader > h1') != null) {
+					return document.querySelector('#loader > h1').innerText;
+				}
 				
+				if(document.querySelector('#logo > * h1') != null){
+					 return document.querySelector('#logo > * h1').innerText;
+				}
+				
+				if(document.querySelector('#app > div > h1') != null){
+					 return document.querySelector('#app > div > h1').innerText;
+				}
+				
+				if(document.querySelector('#app > * h1') != null){
+					 return document.querySelector('#app > * h1').innerText;
+				}
 				else{
 					return false;
 				}
