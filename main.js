@@ -454,24 +454,33 @@ class BruteforceTask {
 				}
           })
             .then(function(hasTitle) {
+
                 if (hasTitle) {
                     Face.setStatus( hasTitle);
 					Face.setColor('none');
 
+					if(hasTitle == "YOU ARE IN THE WAITING ROOM"){
+						Face.setColor('none');
+
+					}else
 					if(hasTitle == "YOU'RE ALMOST THERE…"){
 						Face.setColor('green');
-						Face.enableButton('fillAtc');
-
 					}
 					else if(hasTitle.toUpperCase() == "PRODUCT DETAILS"){
 						Face.setColor('green');
+					}else{
+						Face.setColor('blue');
 					}
                 }else{
 					Face.setColor('orange');
 
 					Face.setStatus( "NO TITLE");
 				} 
-                    setTimeout(function(){checkForSitekey()}, 20000);
+                    setTimeout(function(){
+						Face.setStatus( "REFRESHING");
+						Face.setColor('PURPLE');
+						setTimeout(function(){checkForSitekey()}, 1000);
+					},20000)
           });
         }
         checkForSitekey();
