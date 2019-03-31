@@ -452,7 +452,13 @@ class BruteforceTask {
 				else{
 					return false;
 				}
-          })
+          }).catch((err) => {
+        this.setStatus('Error: ' + err.toString());
+        console.log(err);
+        this.setColor('red');
+          setTimeout(() => {checkForSitekey()}, 3000);
+        
+      })
             .then(function(hasTitle) {
 
                 if (hasTitle) {
