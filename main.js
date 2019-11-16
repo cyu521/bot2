@@ -1,4 +1,4 @@
-const electron = require('electron');
+﻿const electron = require('electron');
 const {app, BrowserWindow} = electron;
 const ipcMain = electron.ipcMain
 const Nightmare = require('nightmare');
@@ -465,10 +465,14 @@ class BruteforceTask {
                     Face.setStatus( hasTitle);
 					Face.setColor('none');
 
-					if(hasTitle == "YOU ARE IN THE WAITING ROOM"){
+					if(hasTitle == "YOU ARE IN THE WAITING ROOM" || hasTitle == "SALE WILL BEGIN SHORTLY" || hasTitle == "SALE HAS STARTED"){
 						Face.setColor('none');
-
+				
 					}else
+					if(hasTitle == "SOLD OUT"){
+						Face.setColor('red');
+					}
+					else
 					if(hasTitle == "YOU'RE ALMOST THERE…"){
 						Face.setColor('green');
 					}
